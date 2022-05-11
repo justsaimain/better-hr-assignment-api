@@ -31,4 +31,12 @@ type Mutation {
         phone: String!
         user_id: Int!
     ): Employee @create
+
+    updateEmployee(
+        id: ID!
+        name: String!
+        email: String!
+        phone: String!
+        user_id: Int!
+    ): Employee @update
 }
