@@ -15,13 +15,16 @@ type Employee {
     email: String!
     phone: String!
     user: User!
+    status: String!
     created_at: DateTime!
     updated_at: DateTime!
 }
 
 type Query {
-    employees: [Employee!]! @guard @paginate
-    employee(id: ID! @eq): Employee @guard @find
+    employees: [Employee!]! @paginate
+    employee(id: ID! @eq): Employee @find
+    filterStatusEmployees(status: String! @eq(key: "status")): [Employee!]!
+        @paginate
 }
 
 type Mutation {

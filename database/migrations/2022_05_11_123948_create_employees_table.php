@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+            $table->enum('status', ['active','inactive'])->default('active');
             $table->foreignIdFor(User::class, 'user_id');
 
             $table->timestamps();

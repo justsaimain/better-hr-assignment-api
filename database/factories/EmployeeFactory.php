@@ -23,7 +23,8 @@ class EmployeeFactory extends Factory
             'phone' => $this->faker->phoneNumber(),
             'user_id' => function () {
                 return User::all()->random()->id;
-            }
+            },
+            'status' => $this->faker->randomElement(['active','inactive'])
         ];
     }
 }
