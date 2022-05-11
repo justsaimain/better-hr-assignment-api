@@ -43,4 +43,6 @@ type Mutation {
     deleteEmployee(id: ID!): Employee @guard @delete
 
     loginUser(email: String!, password: String!): String!
+
+    logoutUser: String!
 }
