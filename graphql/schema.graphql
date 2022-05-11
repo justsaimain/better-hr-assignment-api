@@ -41,4 +41,6 @@ type Mutation {
     ): Employee! @update
 
     deleteEmployee(id: ID!): Employee @delete
+
+    loginUser(email: String!, password: String!): String!
 }
