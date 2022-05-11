@@ -25,6 +25,8 @@ type Query {
     employee(id: ID! @eq): Employee @find
     filterStatusEmployees(status: String! @eq(key: "status")): [Employee!]!
         @paginate
+    searchEmployees(name: String @where(operator: "like")): [Employee!]!
+        @paginate
 }
 
 type Mutation {
@@ -46,6 +48,8 @@ type Mutation {
     deleteEmployee(id: ID!): Employee @guard @delete
 
     loginUser(email: String!, password: String!): String!
+
+    me: User! @guard @auth
 
     logoutUser: String! @guard
 }
