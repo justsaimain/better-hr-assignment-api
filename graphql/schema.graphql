@@ -20,8 +20,8 @@ type Employee {
 }
 
 type Query {
-    employees: [Employee!]! @all
-    employee(id: ID! @eq): Employee @find
+    employees: [Employee!]! @guard @all
+    employee(id: ID! @eq): Employee @guard @find
 }
 
 type Mutation {
@@ -30,7 +30,7 @@ type Mutation {
         email: String!
         phone: String!
         user_id: Int!
-    ): Employee! @create
+    ): Employee! @guard @create
 
     updateEmployee(
         id: ID!
@@ -38,9 +38,9 @@ type Mutation {
         email: String!
         phone: String!
         user_id: Int!
-    ): Employee! @update
+    ): Employee! @guard @update
 
-    deleteEmployee(id: ID!): Employee @delete
+    deleteEmployee(id: ID!): Employee @guard @delete
 
     loginUser(email: String!, password: String!): String!
 }

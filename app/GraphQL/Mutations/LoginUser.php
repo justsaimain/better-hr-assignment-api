@@ -13,7 +13,6 @@ final class LoginUser
      */
     public function __invoke($_, array $args)
     {
-        // TODO implement the resolver
         $user = User::where('email', $args['email'])->first();
         if ($user) {
             if (Hash::check($args['password'], $user->password)) {
