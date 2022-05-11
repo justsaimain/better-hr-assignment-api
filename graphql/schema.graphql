@@ -20,7 +20,7 @@ type Employee {
 }
 
 type Query {
-    employees: [Employee!]! @guard @all
+    employees: [Employee!]! @guard @paginate
     employee(id: ID! @eq): Employee @guard @find
 }
 
@@ -44,5 +44,5 @@ type Mutation {
 
     loginUser(email: String!, password: String!): String!
 
-    logoutUser: String!
+    logoutUser: String! @guard
 }
