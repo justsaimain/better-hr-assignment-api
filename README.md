@@ -18,6 +18,13 @@
 
 - Seed the employees data using ```php artisan db:seed```
 
+    ```
+     User Account to Test
+
+     email      : test@example.com
+     password   : password
+    ```
+
 - Create the encryption keys of Laravel Passport 
 
     ```php artisan passport:install```
@@ -25,3 +32,4 @@
 - Run the application
 
     ```php artisan serve```
+
