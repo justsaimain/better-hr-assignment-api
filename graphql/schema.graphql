@@ -27,6 +27,7 @@ type Query {
         @paginate
     searchEmployees(name: String @where(operator: "like")): [Employee!]!
         @paginate
+
 }
 
 type Mutation {
